@@ -18,4 +18,14 @@ class ColouredTurtleTest extends FunSuite with MockFactory with GeneratedMockFac
     val t2 = ColouredTurtle('green)
     t2.forward(3.0)
   }
+  
+  test("ink reservoir") {
+    val m = mockObject(InkReservoir)
+
+    m.expects.use(0.0, 3.0, 0.0)
+
+    val t = ColouredTurtle('green)
+    t.penDown
+    t.forward(3.0)
+  }
 }
