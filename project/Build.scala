@@ -9,10 +9,9 @@ object MyBuild extends Build {
     version := "1.0",
     scalaVersion := "2.9.1",
  
-    resolvers += ScalaToolsSnapshots,
-    libraryDependencies += "org.scalamock" %% "scalamock-scalatest-support" % "2.1",
+    libraryDependencies += "org.scalamock" %% "scalamock-scalatest-support" % "2.2",
     autoCompilerPlugins := true,
-    addCompilerPlugin("org.scalamock" %% "scalamock-compiler-plugin" % "2.1"))
+    addCompilerPlugin("org.scalamock" %% "scalamock-compiler-plugin" % "2.2"))
  
   lazy val myproject = Project("MyProject", file(".")) settings(generateMocksSettings: _*) configs(Mock)
 }
