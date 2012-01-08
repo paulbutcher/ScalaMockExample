@@ -2,7 +2,7 @@ import sbt._
 import Keys._
 import ScalaMockPlugin._
  
-object MyBuild extends Build {
+object ScalaMockExample extends Build {
  
   override lazy val settings = super.settings ++ Seq(
     organization := "com.example",
@@ -13,5 +13,5 @@ object MyBuild extends Build {
     autoCompilerPlugins := true,
     addCompilerPlugin("org.scalamock" %% "scalamock-compiler-plugin" % "2.2"))
  
-  lazy val myproject = Project("MyProject", file(".")) settings(generateMocksSettings: _*) configs(Mock)
+  lazy val myproject = Project("ScalaMockExample", file(".")) settings(generateMocksSettings: _*) configs(Mock)
 }
