@@ -9,9 +9,9 @@ object ScalaMockExample extends Build {
     version := "1.0",
     scalaVersion := "2.9.1",
  
-    libraryDependencies += "org.scalamock" %% "scalamock-scalatest-support" % "2.2",
+    libraryDependencies += "org.scalamock" %% "scalamock-scalatest-support" % "2.3-SNAPSHOT",
     autoCompilerPlugins := true,
-    addCompilerPlugin("org.scalamock" %% "scalamock-compiler-plugin" % "2.2"))
+    addCompilerPlugin("org.scalamock" %% "scalamock-compiler-plugin" % "2.3-SNAPSHOT"))
  
   lazy val myproject = Project("ScalaMockExample", file(".")) settings(generateMocksSettings: _*) configs(Mock)
 }
