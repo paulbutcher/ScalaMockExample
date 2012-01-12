@@ -28,5 +28,8 @@ object ColouredTurtle {
     new ColouredTurtle(r, g, b)
   }
  
-  private val colourMap = Map('red -> (1.0, 0.0, 0.0), 'green -> (0.0, 1.0, 0.0), 'blue -> (0.0, 0.0, 1.0))
+  private val colourMap = Map(
+    'red -> (1.0, 0.0, 0.0), 
+    'green -> (0.0, 1.0, 0.0), 
+    'blue -> (0.0, 0.0, 1.0))
 }
