@@ -7,12 +7,11 @@ object ScalaMockExample extends Build {
   override lazy val settings = super.settings ++ Seq(
     organization := "com.example",
     version := "1.0",
-    scalaVersion := "2.9.1",
+    scalaVersion := "2.9.2",
  
-	resolvers += "Sonatype OSS Snapshots" at "http://oss.sonatype.org/content/repositories/snapshots/",
-    libraryDependencies += "org.scalamock" %% "scalamock-scalatest-support" % "2.3-SNAPSHOT",
+    libraryDependencies += "org.scalamock" %% "scalamock-scalatest-support" % "2.4",
     autoCompilerPlugins := true,
-    addCompilerPlugin("org.scalamock" %% "scalamock-compiler-plugin" % "2.3-SNAPSHOT"))
+    addCompilerPlugin("org.scalamock" %% "scalamock-compiler-plugin" % "2.4"))
  
-  lazy val myproject = Project("ScalaMockExample", file(".")) settings(generateMocksSettings: _*) configs(Mock)
+    lazy val myproject = Project("ScalaMockExample", file(".")) settings(generateMocksSettings: _*) configs(Mock)
 }
