@@ -15,7 +15,7 @@ class FunctionTest extends FunSuite with MockFactory {
       f expects ("intermediate 3", 3) returning "final"
     }
     
-    expect("final") { Seq(0, 1, 2, 3).foldLeft("initial")(f) }
+    expectResult("final") { Seq(0, 1, 2, 3).foldLeft("initial")(f) }
   }
   
   test("where") {
@@ -24,8 +24,8 @@ class FunctionTest extends FunSuite with MockFactory {
     f expects (where {_ < _}) returning "lower"
     f expects (where {_ > _}) returning "higher"
     
-    expect("lower") { f(1, 2) }
-    expect("higher") { f(2, 1) }
+    expectResult("lower") { f(1, 2) }
+    expectResult("higher") { f(2, 1) }
   }
   
   test("onCall") {
@@ -33,7 +33,7 @@ class FunctionTest extends FunSuite with MockFactory {
     
     f expects (*, *) onCall {_ + _}
     
-    expect(5) { f(2, 3) }
+    expectResult(5) { f(2, 3) }
   }
   
   test("complicated") {
@@ -42,7 +42,7 @@ class FunctionTest extends FunSuite with MockFactory {
     f expects (where {_ < _}) onCall {_ + _}
     f expects (where {_ > _}) onCall {_ - _}
     
-    expect(3) { f(1, 2) }
-    expect(5) { f(10, 5) }
+    expectResult(3) { f(1, 2) }
+    expectResult(5) { f(10, 5) }
   }
 }
