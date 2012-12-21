@@ -3,6 +3,7 @@ package com.example
 import org.scalatest.FunSuite
 import org.scalamock.scalatest.MockFactory
 import scala.math.{Pi, sqrt}
+import scala.language.postfixOps
  
 class ControllerTestMockitoStyle extends FunSuite with MockFactory {
  
